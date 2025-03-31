@@ -1,11 +1,9 @@
 package br.com.fiap.checkpoint1.controller;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.fiap.checkpoint1.dto.PacienteRequestCreate;
 import br.com.fiap.checkpoint1.dto.PacienteRequestUpdate;
 import br.com.fiap.checkpoint1.dto.PacienteResponse;
-import br.com.fiap.checkpoint1.model.Paciente;
 import br.com.fiap.checkpoint1.service.PacienteService;
 
 @RestController
@@ -30,7 +27,7 @@ public class PacienteController {
     private PacienteService pacienteService;
 
     @PostMapping
-    public ResponseEntity<PacienteResponse> create(@RequestBody PacienteRequestUpdate dto){
+    public ResponseEntity<PacienteResponse> create(@RequestBody PacienteRequestCreate dto){
         return ResponseEntity.status(201).body(new PacienteResponse().toDto(pacienteService
         .createPaciente(dto)));
 

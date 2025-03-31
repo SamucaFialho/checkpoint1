@@ -6,7 +6,7 @@ public class PacienteRequestUpdate {
     private String endereco;
     private String bairro;
     private String email;
-    private String telefone;
+    private String telefone_completo;
 
 
     public Long getId() {
@@ -40,10 +40,10 @@ public class PacienteRequestUpdate {
         this.email = email;
     }
     public String getTelefone() {
-        return telefone;
+        return telefone_completo;
     }
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefone(String telefone_completo) {
+        this.telefone_completo = telefone_completo;
     }
 
 }
